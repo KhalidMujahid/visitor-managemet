@@ -11,10 +11,10 @@ mongoose
   .then(() => console.log("DB connected"))
   .catch((error) => console.log(error));
 
-app.set("view engine", "ejs");
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: "*",
