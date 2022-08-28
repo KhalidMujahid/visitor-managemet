@@ -5,7 +5,6 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 
 router.post("/auth/login", async (req, res) => {
-  console.log(req.body);
   try {
     const { username, password } = req.body;
 
