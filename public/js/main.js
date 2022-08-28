@@ -58,7 +58,7 @@ Login?.addEventListener("click", (e) => {
   window.location.href = "/";
 });
 
-SignupButton?.addEventListener("click", (e) => {
+SignupButton?.addEventListener("click", async (e) => {
   e.preventDefault();
   if (!Signuser.value || !Signpassword.value || !Sconfirm.value) {
     Signmsg.style.display = "block";
@@ -87,6 +87,8 @@ SignupButton?.addEventListener("click", (e) => {
   xhr.open("POST", "/register", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send(`username=${Signuser.value}&password=${Signpassword.value}`);
+
+  await fetch("");
 });
 SignX?.addEventListener("click", (e) => {
   if (Signmsg.style.display == "block") {
@@ -105,7 +107,7 @@ Logout?.addEventListener("click", (e) => {
 const templates = document.querySelector(".template");
 
 const getData = async () => {
-  await fetch("http://localhost:3000/users")
+  await fetch("https://visitor-managements.herokuapp.com/users")
     .then((res) => res.json())
     .then((data) => {
       data.forEach((d) => {
@@ -145,7 +147,7 @@ getData();
 const deleteButton = document.querySelector(".delete");
 
 const deleteFunc = async () => {
-  await fetch(`http://localhost:3000/delete/${id}`);
+  await fetch(`https://visitor-managements.herokuapp.com/delete/${id}`);
 };
 
 const visitor_counter = document.querySelector(".visitor_counter");
@@ -155,14 +157,14 @@ const job_counter = document.querySelector(".job_counter");
 
 const counterFunc = async () => {
   // All visitor counter
-  await fetch("http://localhost:3000/users")
+  await fetch("https://visitor-managements.herokuapp.com/users")
     .then((res) => res.json())
     .then((data) => (visitor_counter.innerText = data.length))
     .catch((error) => console.log(error));
 
   // Buiness counter
   let count = 0;
-  await fetch("http://localhost:3000/users")
+  await fetch("https://visitor-managements.herokuapp.com/users")
     .then((res) => res.json())
     .then((data) => {
       data?.forEach((d) => {
@@ -175,7 +177,7 @@ const counterFunc = async () => {
 
   // Personal counter
   let per_count = 0;
-  await fetch("http://localhost:3000/users")
+  await fetch("https://visitor-managements.herokuapp.com/users")
     .then((res) => res.json())
     .then((data) => {
       data?.forEach((d) => {
@@ -188,7 +190,7 @@ const counterFunc = async () => {
 
   // Personal counter
   let job_count = 0;
-  await fetch("http://localhost:3000/users")
+  await fetch("https://visitor-managements.herokuapp.com/users")
     .then((res) => res.json())
     .then((data) => {
       data?.forEach((d) => {
