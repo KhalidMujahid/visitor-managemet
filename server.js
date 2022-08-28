@@ -6,7 +6,8 @@ const cors = require("cors");
 
 // connect DB
 mongoose
-  .connect("mongodb://localhost/VMS")
+  //.connect("mongodb://localhost/VMS")
+  .connect("mongodb+srv://binkhalid:binkhalid@cluster0.idmj2.mongodb.net/VMS")
   .then(() => console.log("DB connected"))
   .catch((error) => console.log(error));
 
