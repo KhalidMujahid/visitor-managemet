@@ -1,0 +1,31 @@
+const express = require("express");
+const PORT = process.env.PORT || 3000;
+const app = express();
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+// connect DB
+mongoose
+  .connect("mongodb://localhost/VMS")
+  .then(() => console.log("DB connected"))
+  .catch((error) => console.log(error));
+
+app.set("view engine", "ejs");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+// middlewares
+app.use("/", require("./routes/home.route"));
+app.use("/", require("./routes/login.route"));
+app.use("/", require("./routes/register.route"));
+app.use("/", require("./routes/remove.route"));
+app.use("/", require("./routes/users.route"));
+app.use("/", require("./routes/add.route"));
+
+app.listen(PORT, () => console.log("Server running on port ", PORT));

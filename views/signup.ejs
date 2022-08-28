@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quddies</title>
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-outline-primary mt-3 signlogin">login</button>
+  </div>
+  <div style="height: 100vh" class="d-flex justify-content-center align-items-center">
+    <form class="border w-25 p-5">
+      <h3>Create Account</h3>
+      <div style="display: none;" class="signmsg alert alert-danger">
+        <div class="d-flex justify-content-between">
+          <p class="errorConfirm">fields cannot be empty</p>
+          <i class="fas fa-times fa-2x signx"></i>
+        </div>
+      </div>
+      <div class="input-group">
+        <input class="mt-3 form-control signuser" type="text" placeholder="Admin id" />
+        <span class="input-group-text mt-3">
+          <i class="fas fa-user"></i>
+        </span>
+      </div>
+      <div class="input-group">
+        <input class="mt-3 form-control signpassword" type="password" placeholder="password" />
+        <span class="input-group-text mt-3">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+      <div class="input-group">
+        <input class="mt-3 form-control confirm" type="password" placeholder="confirm password" />
+        <span class="input-group-text mt-3">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+      <button class="btn btn-outline-primary w-100 mt-3 signup">Signup</button>
+    </form>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

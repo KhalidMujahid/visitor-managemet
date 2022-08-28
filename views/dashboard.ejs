@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quddies</title>
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+  <style>
+  </style>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="d-flex p-3 justify-content-between bg-light ">
+    <!--header-->
+    <h3>Quddies Dashboard</h3>
+    <div class="d-flex justify-content-between w-25 align-items-center">
+      <p>home</p>
+      <p><a href="/form">add new visitor</a></p>
+      <p>profile</p>
+      <p><button class="btn btn-outline-primary logout">Logout</button></p>
+    </div>
+  </div>
+  <!--card-->
+  <div class="container d-flex justify-content-between mt-4">
+    <div class="card w-25 p-2 bg-primary">
+      <i class="fas fa-users  fa-3x"></i>
+      <h2>Visitors</h2>
+      <h1 class="visitor_counter"></h1>
+    </div>
+    <div class="card w-25 p-2 bg-danger">
+      <i class="fas fa-shopping-bag  fa-3x"></i>
+      <h2>Buisness Visits</h2>
+      <h1 class="buisness_counter"></h1>
+    </div>
+    <div class="card w-25 p-2 bg-success">
+      <i class="fas fa-smile fa-3x"></i>
+      <h2>Personal Visits</h2>
+      <h1 class="personal_counter"></h1>
+    </div>
+    <div class="card w-25 p-2 bg-dark text-white">
+      <i class="fas fa-file  fa-3x"></i>
+      <h2>Job Visits</h2>
+      <h1 class="job_counter"></h1>
+    </div>
+  </div>
+  <!--visitors table-->
+  <div class="card mt-5 container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone No.</th>
+          <th>purpose</th>
+          <th>To meet</th>
+          <th>Date of Visit</th>
+          <th>status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="template">
+
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+
+</html>

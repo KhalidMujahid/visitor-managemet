@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quddies</title>
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+</head>
+
+<body>
+  <div class="bg-light p-3 d-flex justify-content-between">
+    <h3>Add Visitors</h3>
+    <a href="/dashboard">home</a>
+  </div>
+  <form action="/add/new" method="post">
+    <div class="card mt-5 p-3 d-flex w-50  form-group">
+      <img width="100px" height="100px" class="img-thumbnail d-flex justify-content-left" src="images/finey.jpeg"
+        alt="" />
+      <div class="d-flex flex-column w-75 ">
+        <input class="form-control" name="name" placeholder="Name" />
+        <input class="form-control" name="address" placeholder="Address" />
+        <input class="form-control" name="email" placeholder="Email" />
+        <input class="form-control" name="phone_number" placeholder="phone number" />
+        <select class="form-control" name="purpose">
+          <option>Purpose</option>
+          <option value="buisness">Buisness</option>
+          <option value="personal">Personal</option>
+          <option value="job">Job</option>
+        </select>
+        <input class="form-control" name="meet" placeholder="To meet" />
+        <input class="form-control" name="date_of_visit" type="date" />
+        <select class="form-control" name="status">
+          <option>Status</option>
+          <option value="expected">Expected</option>
+          <option value="check-in">Check-in</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-outline-success w-25">Submit</button>
+  </form>
+  </div>
+</body>
+
+</html>
