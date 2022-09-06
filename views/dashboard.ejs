@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
   <style>
+    a {
+      text-decoration: none;
+    }
   </style>
   <script src="js/main.js" defer></script>
 </head>
@@ -16,39 +19,56 @@
   <div class="d-flex p-3 justify-content-between bg-light ">
     <!--header-->
     <h3>Quddies Dashboard</h3>
-    <div class="d-flex justify-content-between w-25 align-items-center">
-      <p>home</p>
-      <p><a href="/form">add new visitor</a></p>
-      <p>profile</p>
-      <p><button class="btn btn-outline-primary logout">Logout</button></p>
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- <p>home</p> -->
+      <p class="btn btn-outline-primary"><a href="/form">add new visitor</a><i class="fas fa-plus"></i></p>
+      <p class="btn btn-outline-primary"><a href="/profile">profile</a><i class="fas fa-user"></i></p>
+      <p><button class="btn btn-outline-primary logout">Logout <i class="fas fa-power-off"></i></button></p>
+    </div>
+  </div>
+  <!-- Search bar -->
+  <div class="container">
+    <div class="form-group d-flex my-4 w-100 p-3">
+      <input type="text" placeholder="Search email or phone number..." class="form-control">
+      <button class="btn btn-outline-primary p-2"><i class="fas fa-search"></i></button>
     </div>
   </div>
   <!--card-->
-  <div class="container d-flex justify-content-between mt-4">
-    <div class="card w-25 p-2 bg-primary">
-      <i class="fas fa-users  fa-3x"></i>
-      <h2>Visitors</h2>
-      <h1 class="visitor_counter"></h1>
-    </div>
-    <div class="card w-25 p-2 bg-danger">
-      <i class="fas fa-shopping-bag  fa-3x"></i>
-      <h2>Buisness Visits</h2>
-      <h1 class="buisness_counter"></h1>
-    </div>
-    <div class="card w-25 p-2 bg-success">
-      <i class="fas fa-smile fa-3x"></i>
-      <h2>Personal Visits</h2>
-      <h1 class="personal_counter"></h1>
-    </div>
-    <div class="card w-25 p-2 bg-dark text-white">
-      <i class="fas fa-file  fa-3x"></i>
-      <h2>Job Visits</h2>
-      <h1 class="job_counter"></h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card p-2 h-100 bg-primary">
+          <i class="fas fa-users  fa-3x"></i>
+          <h2>Visitors</h2>
+          <h1 class="visitor_counter"></h1>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card p-2 h-100 bg-danger">
+          <i class="fas fa-shopping-bag  fa-3x"></i>
+          <h2>Buisness Visits</h2>
+          <h1 class="buisness_counter"></h1>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 p-2 bg-success">
+          <i class="fas fa-smile fa-3x"></i>
+          <h2>Personal Visits</h2>
+          <h1 class="personal_counter"></h1>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 p-2 bg-dark text-white">
+          <i class="fas fa-file  fa-3x"></i>
+          <h2>Job Visits</h2>
+          <h1 class="job_counter"></h1>
+        </div>
+      </div>
     </div>
   </div>
   <!--visitors table-->
-  <div class="card mt-5 container">
-    <table class="table">
+  <div class="container my-5">
+    <table class="table border striped hover">
       <thead>
         <tr>
           <th>Name</th>
@@ -67,6 +87,12 @@
       </tbody>
     </table>
 
+  </div>
+
+  <!-- trade mark -->
+  <div class="footer mt-5 text-center">
+    <h6>Powered by Hi-Tech</h6>
+    <p>&copy; 2022</p>
   </div>
 
 </body>

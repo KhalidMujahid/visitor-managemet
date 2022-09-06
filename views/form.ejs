@@ -7,18 +7,35 @@
   <title>Quddies</title>
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    input,
+    select,
+    button {
+      margin-top: 1rem;
+    }
+
+    form {
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
   <div class="bg-light p-3 d-flex justify-content-between">
     <h3>Add Visitors</h3>
-    <a href="/dashboard">home</a>
+    <p class="btn btn-outline-primary"><a href="/dashboard">home</a><i class="fas fa-home"></i></p>
   </div>
-  <form action="/add/new" method="post">
-    <div class="card mt-5 p-3 d-flex w-50  form-group">
-      <img width="100px" height="100px" class="img-thumbnail d-flex justify-content-left" src="images/finey.jpeg"
-        alt="" />
-      <div class="d-flex flex-column w-75 ">
+  <div class="container d-flex justify-content-center w-100 align-items-center my-5">
+    <form class="border p-4" action="/add/new" method="post">
+      <div class="d-flex align-items-center justify-content-center mt-5 p-3">
+        <img width="100px" height="100px" class="img-thumbnail d-flex justify-content-left" src="images/finey.jpeg"
+          alt="" />
+      </div>
+      <div>
         <input class="form-control" name="name" placeholder="Name" />
         <input class="form-control" name="address" placeholder="Address" />
         <input class="form-control" name="email" placeholder="Email" />
@@ -37,8 +54,14 @@
           <option value="check-in">Check-in</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-outline-success w-25">Submit</button>
-  </form>
+      <button type="submit" class="btn btn-outline-success w-100">Submit</button>
+
+      <!-- trade mark -->
+      <div class="footer mt-5 text-center">
+        <h6>Powered by Hi-Tech</h6>
+        <p>&copy; 2022</p>
+      </div>
+    </form>
   </div>
 </body>
 

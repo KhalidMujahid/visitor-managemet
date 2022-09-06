@@ -24,4 +24,12 @@ router.get("/form", async (req, res) => {
   }
 });
 
+router.get("/profile", async (req, res) => {
+  try {
+    return res.status(200).render("profile");
+  } catch (error) {
+    return res.status(501).send(error);
+  }
+});
+
 module.exports = router;
