@@ -9,8 +9,10 @@ const Signup = document.querySelector(".sign");
 
 loginButton?.addEventListener("click", (e) => {
   e.preventDefault();
+  loginButton.innerText = "loading...";
   if (!userId.value || !password.value) {
     msg.style.display = "block";
+    loginButton.innerText = "login";
     return;
   }
 
@@ -21,10 +23,12 @@ loginButton?.addEventListener("click", (e) => {
       window.location.href = "/dashboard";
       return;
     }
+    loginButton.innerText = "loading...";
 
     if (this.readyState === 4 && this.status === 401) {
       msg.style.display = "block";
       errorText.innerText = this.responseText;
+      loginButton.innerText = "login";
     }
   };
   xhr.open("POST", "/auth/login", true);
@@ -60,20 +64,30 @@ Login?.addEventListener("click", (e) => {
 
 SignupButton?.addEventListener("click", async (e) => {
   e.preventDefault();
+  SignupButton.innerText = "loading...";
+
   if (!Signuser.value || !Signpassword.value || !Sconfirm.value) {
     Signmsg.style.display = "block";
+    SignupButton.innerText = "Signup";
+
     return;
   }
+
+  SignupButton.innerText = "loading...";
 
   if (String(Signpassword.value) !== String(Sconfirm.value)) {
     Signmsg.style.display = "block";
     errorConfirm.innerText = "Password does not match!";
+    SignupButton.innerText = "Signup";
+
     return;
   }
 
   const xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function () {
+    SignupButton.innerText = "loading...";
+
     if (this.readyState === 4 && this.status === 200) {
       window.location.href = "/";
       return;
@@ -82,6 +96,7 @@ SignupButton?.addEventListener("click", async (e) => {
     if (this.readyState === 4 && this.status === 401) {
       msg.style.display = "block";
       errorText.innerText = this.responseText;
+      SignupButton.innerText = "Signup";
     }
   };
   xhr.open("POST", "/register", true);
@@ -112,6 +127,7 @@ const getData = async () => {
     .then((data) => {
       data.forEach((d) => {
         const {
+          _id,
           name,
           email,
           address,
@@ -132,8 +148,8 @@ const getData = async () => {
           <td>${date_of_visit}</td>
           <td>${status}</td>
           <td>
-            <button class="btn btn-primary">edit</button>
-            <button class="btn btn-danger">delete</button>
+            <a href="/edit/${_id}" class="btn btn-primary">edit</a>
+            <a href="/delete/${_id}" class="btn btn-danger">delete</a>
           </td>
         </tr>
         `;

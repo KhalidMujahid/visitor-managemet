@@ -8,15 +8,23 @@
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/fontawesome/css/all.min.css">
   <style>
+    .image {
+      background-image: url("../images/bg.jpeg");
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
   </style>
 </head>
 
-<body>
+<body class="image">
   <div class="d-flex justify-content-end container">
-    <button class="btn btn-outline-primary mt-3 sign">signup</button>
+    <button class="btn btn-primary rounded-pill mt-3 sign">signup</button>
   </div>
   <div class="container p-4">
-    <form action="/auth/login" method="post" class="border w-100 p-5">
+    <form action="/auth/login" method="post" class="bg-white border w-100 p-5">
       <h3>Admin panel</h3>
       <div style="display: none;" class="msg alert alert-danger">
         <div class="d-flex justify-content-between">
