@@ -2,11 +2,11 @@ const User = require("../models/User");
 
 const router = require("express").Router();
 
-router.delete("/delete/:id", async (req, res) => {
+router.get("/delete/:id", async (req, res) => {
   try {
-    await User.findByIdAndDelete({ _id: req.params.id })
+    await User.findByIdAndDelete({ _id: req.params.id }, { new: true })
       .then(() => {
-        return res.status(200).send(" One Deleted");
+        return res.status(301).redirect("/dashboard");
       })
       .catch((error) => {
         return res.status(401).send(error);

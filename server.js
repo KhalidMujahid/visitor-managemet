@@ -28,5 +28,6 @@ app.use("/", require("./routes/register.route"));
 app.use("/", require("./routes/remove.route"));
 app.use("/", require("./routes/users.route"));
 app.use("/", require("./routes/add.route"));
+app.use("/", require("./routes/edit.route"));
 
 app.listen(PORT, () => console.log("Server running on port ", PORT));

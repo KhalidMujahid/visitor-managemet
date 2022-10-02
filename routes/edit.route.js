@@ -2,7 +2,7 @@ const User = require("../models/User");
 
 const router = require("express").Router();
 
-router.put("/edit/:id", async (req, res) => {
+router.post("/edit/new", async (req, res) => {
   try {
     const {
       name,
@@ -15,8 +15,10 @@ router.put("/edit/:id", async (req, res) => {
       status,
     } = req.body;
 
+    const id = (await User.findOne({ email }))._id;
+
     await User.findByIdAndUpdate(
-      { _id: req.params.id },
+      { _id: id },
       {
         name,
         address,
@@ -30,7 +32,7 @@ router.put("/edit/:id", async (req, res) => {
       { new: true }
     )
       .then((data) => {
-        return res.status(200).send(data);
+        return res.status(200).redirect("/dashboard");
       })
       .catch((error) => {
         return res.status(401).send(error);

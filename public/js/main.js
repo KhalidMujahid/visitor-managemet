@@ -219,3 +219,50 @@ const counterFunc = async () => {
 };
 
 counterFunc();
+
+// search
+const search = document.querySelector("#search");
+const searchBtn = document.querySelector("#search-btn");
+
+searchBtn?.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  if (!search.value) return;
+
+  await fetch(`/search?phone=${search.value}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const {
+        _id,
+        name,
+        email,
+        address,
+        phone_number,
+        purpose,
+        meet,
+        date_of_visit,
+        status,
+      } = data;
+      let txt = `
+           <tr>
+          <td>${name}</td>
+          <td>${address}</td>
+          <td>${email}</td>
+          <td>${phone_number}</td>
+          <td>${purpose}</td>
+          <td>${meet}</td>
+          <td>${date_of_visit}</td>
+          <td>${status}</td>
+          <td>
+            <a href="/edit/${_id}" class="btn btn-primary">edit</a>
+            <a href="/delete/${_id}" class="btn btn-danger">delete</a>
+          </td>
+        </tr>
+        `;
+      templates.innerHTML = txt;
+      search.value = "";
+    })
+    .catch((error) => {
+      templates.innerHTML = "No visitor found with this number";
+    });
+});

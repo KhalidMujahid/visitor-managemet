@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quddies</title>
+  <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/fontawesome/css/all.min.css">
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    input,
+    select,
+    button {
+      margin-top: 1rem;
+    }
+
+    form {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-light p-3 d-flex justify-content-between">
+    <h3>Edit form</h3>
+    <p class="btn btn-outline-primary"><a href="/dashboard">home</a><i class="fas fa-home"></i></p>
+  </div>
+  <div class="container d-flex justify-content-center w-100 align-items-center my-5">
+    <form class="border p-4" action="/edit/new" method="post">
+      <div class="d-flex align-items-center justify-content-center mt-5 p-3">
+        <img width="100px" height="100px" class="img-thumbnail d-flex justify-content-left" src="../images/finey.jpeg"
+          alt="" />
+      </div>
+      <div>
+        <input class="form-control" value="<%= user.name %>" name="name" placeholder="Name" readonly />
+        <input class="form-control" value="<%= user.address %>" name="address" placeholder="Address" readonly />
+        <input class="form-control" value="<%= user.email %>" name="email" placeholder="Email" readonly />
+        <input class="form-control" value="<%= user.phone_number %>" name="phone_number" placeholder="phone number"
+          readonly />
+        <select class="form-control" name="purpose">
+          <option value="<%= user.purpose %>">
+            <%= user.purpose %>
+          </option>
+        </select>
+        <input class="form-control" value="<%= user.meet %>" name="meet" placeholder="To meet" readonly />
+        <input class="form-control" value="<%= user.date_of_visit %>" name="date_of_visit" readonly />
+        <select class="form-control" name="status">
+          <option>Status</option>
+          <option value="expected">Expected</option>
+          <option value="check-in">Check-in</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-outline-success w-100">Update</button>
+
+      <!-- trade mark -->
+      <div class="footer mt-5 text-center">
+        <h6>Powered by Hi-Tech</h6>
+        <p>&copy; 2022</p>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
